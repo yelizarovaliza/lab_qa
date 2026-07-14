@@ -15,14 +15,14 @@ export class CategoryPage {
   }
 
   async getProductCount(): Promise<number> {
-    await expect(async () => {
+
         const count = await this.productNames.count();
         const noResultsVisible = await this.page.locator('[data-test="category-empty"]').isVisible().catch(() => false);
         
         if (count === 0 && !noResultsVisible) {
         throw new Error('Товари ще не завантажились');
         }
-    }).toPass({ timeout: 15000, intervals: [300, 500, 1000] });
+    await this.page.waitForTimeout(1000);
 
     return await this.productNames.count();
 }
