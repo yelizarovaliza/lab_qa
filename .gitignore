@@ -6,3 +6,6 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+.env
+ai_agent/__pycache__/**
+ai_agent/e2elogs/**
