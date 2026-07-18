@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from './pages/LoginPage';
-import { Page } from '@playwright/test';
 
 test.describe('Тест кейс 1: Логін з правильними даними', () => {
   test('успішний логін перенаправляє на сторінку акаунту', async ({ page }) => {
